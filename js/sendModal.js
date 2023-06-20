@@ -1,4 +1,4 @@
-/* const modal = document.getElementById("authentication-modal") */
+const modal = document.getElementById("authentication-modal")
 
 document.getElementById("sendEmail").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -18,11 +18,10 @@ document.getElementById("sendEmail").addEventListener("submit", function (event)
     }
   ); */
 
-  function simulateButtonClick() {
-    const closeButton = document.querySelector("[data-modal-hide='authentication-modal']");
-    if (closeButton) {
-      closeButton.click();
-    }
+  function closeModal() {
+    modal.setAttribute('data-modal-hide', '');
   }
+
+  closeModal();
 
 });
