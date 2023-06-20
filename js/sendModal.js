@@ -2,7 +2,7 @@ const modal = document.getElementById("authentication-modal")
 
 document.getElementById("sendEmail").addEventListener("submit", function (event) {
   event.preventDefault();
-  modal.style.display = 'none';
+  modal.setAttribute('data-modal-hide', '')
 
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
