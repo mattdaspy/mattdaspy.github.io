@@ -1,6 +1,6 @@
 document.getElementById("sendEmail").addEventListener("submit", function (event) {
   event.preventDefault();
-
+  document.getElementById("authentication-modal").setAttribute('data-modal-hide', 'true');
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
 
@@ -15,7 +15,7 @@ document.getElementById("sendEmail").addEventListener("submit", function (event)
     }
   ); */
 
-  document.getElementById("authentication-modal").setAttribute('data-modal-hide', 'true');
+  
 
 });
 
