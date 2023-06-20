@@ -107,8 +107,28 @@
     </script>
 
     <script>
-        emailjs.sendForm("service_yobjepi", "template_5gsql5o", "#sendEmail")
-    </script>
+        // listen to the form submission
+        document
+          .getElementById("sendEmail")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+  
+            const serviceID = "service_yobjepi";
+            const templateID = "template_5gsql5o";
+  
+            // send the email here
+            emailjs.sendForm(serviceID, templateID, this).then(
+              (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Email sent, thank you for your contact!");
+              },
+              (error) => {
+                console.log("FAILED...", error);
+                alert("Email failed, please try again...", error);
+              }
+            );
+          });
+      </script>
 
 </body>
 </html>
