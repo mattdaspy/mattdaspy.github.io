@@ -1,8 +1,9 @@
 const modal = document.getElementById("authentication-modal")
 
-document.getElementById("sendEmail").addEventListener("submit", function (e) {
-  e.preventDefault();
-  modal.setAttribute('data-modal-hide', 'true');
+document.getElementById("sendEmail").addEventListener("submit", function (event) {
+  event.preventDefault();
+  modal.style.display = 'none';
+
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
 
@@ -10,6 +11,7 @@ document.getElementById("sendEmail").addEventListener("submit", function (e) {
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
       alert("Email sent, thank you for your contact!");
+      modal.style.display = 'none';
     },
     (error) => {
       console.log("FAILED...", error);
@@ -20,8 +22,3 @@ document.getElementById("sendEmail").addEventListener("submit", function (e) {
   
 
 });
-
-/* document.getElementById("sendMail").addEventListener("submit", function(e){
-  e.preventDefault();
-  document.getElementById("authentication-modal").setAttribute('data-modal-hide', 'true');
-}) */
