@@ -1,8 +1,7 @@
-const modal = document.getElementById("authentication-modal")
+/* const modal = document.getElementById("authentication-modal") */
 
 document.getElementById("sendEmail").addEventListener("submit", function (event) {
   event.preventDefault();
-  modal.setAttribute('data-modal-hide', '');
 
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
@@ -18,5 +17,12 @@ document.getElementById("sendEmail").addEventListener("submit", function (event)
       alert("Email failed, please try again...", error);
     }
   ); */
+
+  function simulateButtonClick() {
+    const closeButton = document.querySelector("[data-modal-hide='authentication-modal']");
+    if (closeButton) {
+      closeButton.click();
+    }
+  }
 
 });
