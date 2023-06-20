@@ -98,41 +98,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-    <script type="text/javascript">      
-        (function () { emailjs.init("ConVbp6YWXpEXyRQA"); })();
-    </script>
-
-    <script>
-
-        document.getElementById("sendMail").addEventListener("submit", function(e){
-            e.preventDefault();
-            document.getElementById("authentication-modal").setAttribute('data-modal-hide', 'true');
-        })
-        
-        /* document
-          .getElementById("sendEmail")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-  
-            const serviceID = "service_yobjepi";
-            const templateID = "template_5gsql5o";
-  
-            // send the email here
-            emailjs.sendForm(serviceID, templateID, this).then(
-              (response) => {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Email sent, thank you for your contact!");
-                document.getElementById("authentication-modal").setAttribute("data-modal-hide='authentication-modal'", 'true');
-              },
-              (error) => {
-                console.log("FAILED...", error);
-                alert("Email failed, please try again...", error);
-              }
-            );
-
-          }); */
-      </script>
+    <script type="text/javascript">(function () { emailjs.init("ConVbp6YWXpEXyRQA"); })();</script>
+    <script src="js/sendModal.js"></script>
 
 </body>
 </html>
