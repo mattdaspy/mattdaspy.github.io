@@ -1,5 +1,5 @@
-document.getElementById("sendEmail").addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("sendEmail").addEventListener("submit", function (e) {
+  e.preventDefault();
   document.getElementById("authentication-modal").setAttribute('data-modal-hide', 'true');
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
