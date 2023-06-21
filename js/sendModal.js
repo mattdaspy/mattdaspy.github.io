@@ -23,5 +23,6 @@ document.getElementById("sendEmail").addEventListener("submit", (event) => {
 });
 
 function closeModal() {
-  closeButton.setAttribute('data-modal-hide', '');
+  const hideEvent = new Event('modal-data-hide');
+  closeButton.dispatchEvent(hideEvent);
 }
