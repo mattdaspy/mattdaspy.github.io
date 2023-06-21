@@ -1,7 +1,8 @@
 const modal = document.getElementById("closeModal")
-const emailForm = document.getElementById("sendEmail")
 
-emailForm.addEventListener("submit", (event) => {
+document
+  .getElementById("sendEmail")
+  .addEventListener("submit", function (event) {
 
   event.preventDefault()
 
@@ -11,14 +12,13 @@ emailForm.addEventListener("submit", (event) => {
   emailjs.sendForm(serviceID, templateID, this).then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
-        alert("Email sent, thank you for your contact!")
-        modal.click();
-    }
-    ,
+      alert("Email sent, thank you for your contact!")
+      /* modal.click(); */
+    },  
     (error) => {
       console.log("FAILED...", error);
       alert("Email failed, please try again...", error);
     }
   )
   
-})
+});
