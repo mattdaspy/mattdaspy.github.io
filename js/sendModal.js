@@ -1,7 +1,6 @@
 const modal = document.getElementById("authentication-modal");
 const closeModalButton = document.getElementById("closeModalButton");
 const sendEmailForm = document.getElementById("sendEmail");
-const modalBackdrop = document.querySelector(".modal-backdrop");
 
 sendEmailForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -21,12 +20,23 @@ sendEmailForm.addEventListener("submit", (event) => {
     }
   ); */
 
+  closeModalButton.dispatchEvent(new Event("click", { bubbles: true }));
+
+  // Add your email sending logic here
+
   closeModal();
 });
 
 function closeModal() {
-  modal.remove();
-  modalBackdrop.remove();
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restore scrolling
 }
 
-closeModalButton.addEventListener("click", closeModal);
+closeModalButton.addEventListener("click", () => {
+  const modalDataHide = closeModalButton.getAttribute("modal-data-hide");
+  if (modalDataHide) {
+    const targetModal = document.getElementById(modalDataHide);
+    targetModal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+});
