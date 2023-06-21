@@ -1,6 +1,7 @@
 const modal = document.getElementById("authentication-modal");
 const closeModalButton = document.getElementById("closeModalButton");
 const sendEmailForm = document.getElementById("sendEmail");
+const modalBackdrop = document.querySelector(".modal-backdrop");
 
 sendEmailForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -24,7 +25,8 @@ sendEmailForm.addEventListener("submit", (event) => {
 });
 
 function closeModal() {
-  modal.style.display = 'none';
+  modal.remove();
+  modalBackdrop.remove();
 }
 
 closeModalButton.addEventListener("click", closeModal);
