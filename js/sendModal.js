@@ -10,7 +10,7 @@ sendEmailForm.addEventListener("submit", (event) => {
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
         if (windows.confirm("Email sent, thank you for your contact!")){
-          settimeout(()=> { (modal.close(), 1000) } );
+          settimeout(()=> { (modal.close(), 5000) } );
         }
     },
     (error) => {
