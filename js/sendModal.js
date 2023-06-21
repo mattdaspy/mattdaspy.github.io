@@ -1,13 +1,14 @@
 const modal = document.getElementById("authentication-modal");
-const closeButton = document.querySelector('[data-modal-hide="authentication-modal"]');
+const closeModalButton = document.getElementById("closeModalButton");
+const sendEmailForm = document.getElementById("sendEmail");
 
-document.getElementById("sendEmail").addEventListener("submit", (event) => {
+sendEmailForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
 
-  /* emailjs.sendForm(serviceID, templateID, this).then(
+  /* emailjs.sendForm(serviceID, templateID, sendEmailForm).then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
       alert("Email sent, thank you for your contact!");
@@ -23,5 +24,7 @@ document.getElementById("sendEmail").addEventListener("submit", (event) => {
 });
 
 function closeModal() {
-  closeButton.click();
+  modal.style.display = 'none';
 }
+
+closeModalButton.addEventListener("click", closeModal);
