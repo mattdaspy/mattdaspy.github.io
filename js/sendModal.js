@@ -1,9 +1,4 @@
-const modal = document.getElementById("authentication-modal")
-closeModal(() => { 
-  settimout(() => {
-    modal.click(), 1000
-  })
-});
+const modal = document.getElementById("closeModal")
 
 sendEmailForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,13 +10,14 @@ sendEmailForm.addEventListener("submit", (event) => {
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
         alert("Email sent, thank you for your contact!")
-          closeModal();
-        }
+    }
     ,
     (error) => {
       console.log("FAILED...", error);
       alert("Email failed, please try again...", error);
     }
-  );
+  )
 
+  settimout(() => { modal.click(); }, 1000);
+  
 });
