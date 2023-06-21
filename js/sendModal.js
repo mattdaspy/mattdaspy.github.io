@@ -1,10 +1,9 @@
-const modal = document.getElementById("closeModal")
+const modal = document.getElementById("closeModal");
+const emailForm = document.getElementById("sendEmail");
 
-document
-  .getElementById("sendEmail")
-  .addEventListener("submit", function (event) {
+emailForm.addEventListener("submit", function (event) {
 
-  event.preventDefault()
+  event.preventDefault();
 
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
@@ -12,13 +11,12 @@ document
   emailjs.sendForm(serviceID, templateID, this).then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
-      alert("Email sent, thank you for your contact!")
-      /* modal.click(); */
+      alert("Email sent, thank you for your contact!");
+      modal.click();
     },  
     (error) => {
       console.log("FAILED...", error);
       alert("Email failed, please try again...", error);
     }
-  )
-  
+  );
 });
