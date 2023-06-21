@@ -12,6 +12,7 @@ emailForm.addEventListener("submit", (event) => {
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
         alert("Email sent, thank you for your contact!")
+        modal.click();
     }
     ,
     (error) => {
@@ -19,7 +20,5 @@ emailForm.addEventListener("submit", (event) => {
       alert("Email failed, please try again...", error);
     }
   )
-
-  settimout(() => { modal.click(); }, 1000);
   
 })
