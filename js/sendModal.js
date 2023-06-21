@@ -14,10 +14,10 @@ sendEmailForm.addEventListener("submit", (event) => {
   emailjs.sendForm(serviceID, templateID, sendEmailForm).then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
-        if (windows.confirm("Email sent, thank you for your contact!")){
+        alert("Email sent, thank you for your contact!")
           closeModal();
         }
-    },
+    ,
     (error) => {
       console.log("FAILED...", error);
       alert("Email failed, please try again...", error);
