@@ -1,4 +1,9 @@
 const modal = document.getElementById("authentication-modal")
+closeModal(() => { 
+  settimout(() => {
+    modal.click(), 1000
+  })
+});
 
 sendEmailForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -10,7 +15,7 @@ sendEmailForm.addEventListener("submit", (event) => {
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
         if (windows.confirm("Email sent, thank you for your contact!")){
-          settimeout(()=> { (modal.close(), 5000) } );
+          closeModal();
         }
     },
     (error) => {
