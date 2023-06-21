@@ -18,6 +18,6 @@ sendEmailForm.addEventListener("submit", (event) => {
     }
   )
 
-  settimout(() => { modal.click(); }, 1000);
+  /* settimout(() => { modal.click(); }, 1000); */
   
 });
