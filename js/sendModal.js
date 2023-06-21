@@ -1,6 +1,7 @@
-const modal = document.getElementById("authentication-modal")
+const modal = document.getElementById("authentication-modal");
+const closeButton = document.querySelector('[data-modal-hide="authentication-modal"]');
 
-document.getElementById("sendEmail").addEventListener("submit", function (event) {
+document.getElementById("sendEmail").addEventListener("submit", (event) => {
   event.preventDefault();
 
   const serviceID = "service_yobjepi";
@@ -10,7 +11,7 @@ document.getElementById("sendEmail").addEventListener("submit", function (event)
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
       alert("Email sent, thank you for your contact!");
-      modal.style.display = 'none';
+      closeModal();
     },
     (error) => {
       console.log("FAILED...", error);
@@ -18,10 +19,9 @@ document.getElementById("sendEmail").addEventListener("submit", function (event)
     }
   ); */
 
-  function closeModal() {
-    modal.setAttribute('data-modal-hide', '');
-  }
-
   closeModal();
-
 });
+
+function closeModal() {
+  closeButton.setAttribute('data-modal-hide', '');
+}
