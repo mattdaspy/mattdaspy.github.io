@@ -1,7 +1,9 @@
 const modal = document.getElementById("closeModal")
+const emailForm = document.getElementById("sendEmail")
 
-sendEmailForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+emailForm.addEventListener("submit", (event) => {
+
+  event.preventDefault()
 
   const serviceID = "service_yobjepi";
   const templateID = "template_5gsql5o";
@@ -18,6 +20,6 @@ sendEmailForm.addEventListener("submit", (event) => {
     }
   )
 
-  /* settimout(() => { modal.click(); }, 1000); */
+  settimout(() => { modal.click(); }, 1000);
   
-});
+})
