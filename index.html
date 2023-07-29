@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Silva | Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <style>
+        @keyframes fadeIn {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+        }
 
+        .wrapper {
+            animation: 1.5s fadeIn;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-50 m-0 p-0">
-
+<body class="bg-slate-50 m-0 p-0 wrapper" onload="document.body.children[0].className += 'wrapper';">
     <div class="md:flex md:items-center md:justify-center md:h-screen">
         <div class="md:flex md:justify-center md:place-content-center md:gap-8 md:m-8">
         
